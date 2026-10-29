@@ -410,7 +410,7 @@ Utile pour **concevoir** et discuter un schéma avant de l'écrire. Pour **docum
 
 ### Mermaid
 
-GitHub, GitLab et la plupart des générateurs de sites rendent les blocs ```` ```mermaid ```` directement. Un `erDiagram` en texte se relit en *diff*, se régénère par script ([kata 5](katas.md)), et ne pourrit pas comme un PNG exporté. Limite : au-delà d'une quinzaine de tables, le rendu automatique devient illisible. Il faut alors des vues partielles (un diagramme par domaine).
+GitHub, GitLab et de nombreux outils de documentation (souvent via un plugin) rendent les blocs ```` ```mermaid ```` directement. Un `erDiagram` en texte se relit en *diff*, se régénère par script ([kata 5](katas.md)), et ne pourrit pas comme un PNG exporté. Limite : au-delà d'une quinzaine de tables, le rendu automatique devient illisible. Il faut alors des vues partielles (un diagramme par domaine).
 
 ### tbls
 

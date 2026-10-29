@@ -380,7 +380,7 @@ erDiagram
     }
 ```
 
-Détail de rigueur : en Mermaid, `--` (trait plein) note une relation **identifiante** (la clé étrangère fait partie de la clé primaire de l'enfant, comme `contributions.member_id`) et `..` (pointillé) une relation **non identifiante** (`projects.owner_id` n'est pas dans la clé de `projects`). Le diagramme du [README du chapitre](../README.md) utilise `--` partout, ce qui est une simplification courante.
+Détail de rigueur : en Mermaid, `--` (trait plein) note une relation **identifiante** (la clé étrangère fait partie de la clé primaire de l'enfant, comme `contributions.member_id`) et `..` (pointillé) une relation **non identifiante** (`projects.owner_id` n'est pas dans la clé de `projects`). Le diagramme du [README du chapitre](../README.md) applique cette distinction : seule la relation `members ··· projects` est en pointillé. Beaucoup de diagrammes utilisent `--` partout, ce qui est une simplification courante.
 
 ---
 

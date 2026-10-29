@@ -27,7 +27,7 @@ Tous les modules utilisent le même domaine, pour que tu puisses comparer les ap
 
 ```mermaid
 erDiagram
-    MEMBERS ||--o{ PROJECTS : "possède"
+    MEMBERS ||..o{ PROJECTS : "possède"
     MEMBERS ||--o{ CONTRIBUTIONS : "contribue"
     PROJECTS ||--o{ CONTRIBUTIONS : "reçoit"
     PROJECTS ||--o{ PROJECT_TAGS : "est classé"

@@ -68,6 +68,14 @@ This roadmap provides a structured path through the knowledge base, from beginne
 - [ ] `04_back-end/sql/joins/`
 - [ ] `04_back-end/sql/advanced-queries/`
 
+**Data Access Layer (après les bases SQL)** → [`04_back-end/orm/`](../04_back-end/orm/README.md)
+- [ ] `04_back-end/orm/01-fondamentaux/`
+- [ ] `04_back-end/orm/02-sql-query-builder-orm/`
+- [ ] `04_back-end/orm/03-migrations/`
+- [ ] `04_back-end/orm/04-modelisation-merise-uml-erd/`
+- [ ] `04_back-end/orm/05-documenter/`
+- [ ] `04_back-end/orm/06-concepts-avances/`
+
 **Week 19-20: Server Development**
 - [ ] `04_back-end/nodejs/express/`
 - [ ] `04_back-end/nodejs/routing/`

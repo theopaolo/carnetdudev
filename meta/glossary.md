@@ -16,6 +16,12 @@ A set of rules and protocols that allows different software applications to comm
 **Abstraction**  
 The concept of hiding complex implementation details while showing only essential features.
 
+**ACID**
+Atomicité, Cohérence, Isolation, Durabilité : les garanties d'une transaction. L'isolation est la plus nuancée : elle dépend du niveau choisi (voir *Niveau d'isolation*).
+
+**Active Record (pattern)**
+Objet qui représente une ligne de table et porte à la fois ses données, sa logique et sa propre persistance (`save()`, `delete()`). Rails ActiveRecord, Eloquent, Sequelize. Nommé par Martin Fowler (PoEAA, 2002).
+
 ## B
 
 **Big O Notation**  
@@ -61,6 +67,12 @@ A statement that introduces a variable, function, or other identifier to the pro
 **DRY (Don't Repeat Yourself)**  
 A principle aimed at reducing repetition of code patterns.
 
+**Data Mapper (pattern)**
+Couche qui transfère les données entre des objets métier ignorants de la base et les tables, en gardant les deux indépendants. Doctrine, Hibernate, MikroORM. Opposé à l'Active Record.
+
+**DDL (Data Definition Language)**
+Partie de SQL qui définit la structure : `CREATE`, `ALTER`, `DROP`. Selon le SGBD, le DDL est transactionnel (PostgreSQL, SQLite) ou provoque un commit implicite (MySQL).
+
 ## E
 
 **Encapsulation**  
@@ -71,6 +83,12 @@ A combination of values, variables, and operators that evaluates to a single val
 
 **Edge Case**  
 A problem or situation that occurs only at an extreme (maximum or minimum) operating parameter.
+
+**ERD (Entity-Relationship Diagram)**
+Diagramme entité-association issu de Peter Chen (1976). La notation *crow's foot* (pattes de corbeau) est la plus répandue dans les outils actuels.
+
+**Expand/Contract**
+Stratégie de migration sans interruption : on ajoute la nouvelle structure (*expand*), on fait cohabiter ancien et nouveau, puis on retire l'ancien (*contract*). Aussi appelée *parallel change*.
 
 ## F
 
@@ -105,6 +123,9 @@ HyperText Transfer Protocol - the foundation of data communication on the web.
 **Hoisting**  
 A JavaScript mechanism where variable and function declarations are moved to the top of their scope.
 
+**Hydratation**
+Transformation des lignes renvoyées par la base en objets du langage, avec conversion des types (texte → `Date`, entier → booléen…).
+
 ## I
 
 **IndexedDB**
@@ -118,6 +139,12 @@ A contract that defines what methods a class must implement.
 
 **Iteration**
 The repetition of a process or set of instructions in a program.
+
+**Identity Map**
+Registre qui garantit qu'une ligne donnée n'est chargée qu'une fois par contexte : deux lectures du même `id` renvoient le même objet.
+
+**Impedance mismatch (objet-relationnel)**
+Décalage entre le modèle objet (identité, références, héritage, graphe) et le modèle relationnel (clés, ensembles, jointures). Le problème que tout ORM tente de combler.
 
 ## J
 
@@ -163,6 +190,15 @@ A separate file containing code that can be imported and used in other files.
 **Memoization**  
 An optimization technique that stores the results of expensive function calls.
 
+**MCD / MLD / MPD**
+Modèles Conceptuel, Logique et Physique des Données de la méthode Merise : du sens métier (entités, associations, cardinalités) aux tables, puis au SQL d'un SGBD précis.
+
+**Merise**
+Méthode française de conception de systèmes d'information (Tardieu, Rochfeld, Colletti, fin des années 1970). Toujours enseignée dans les titres professionnels du numérique.
+
+**Migration**
+Changement de schéma (ou de données) versionné, ordonné et rejouable, généralement avec une opération inverse (`down`) pour revenir en arrière.
+
 ## N
 
 **Null**  
@@ -173,6 +209,15 @@ A basic unit of a data structure, such as a linked list or tree.
 
 **Nested**  
 Code structures placed inside other similar structures.
+
+**N+1 (problème)**
+Une requête pour charger N lignes, puis une requête supplémentaire par ligne pour charger une relation : N+1 requêtes au lieu de 1 ou 2. Défaut de performance n°1 des ORMs.
+
+**Niveau d'isolation**
+Degré auquel une transaction voit les modifications concurrentes : *read uncommitted*, *read committed*, *repeatable read*, *serializable*. Chaque niveau autorise ou interdit certaines anomalies.
+
+**Normalisation**
+Décomposition d'un schéma pour éliminer les redondances et les anomalies de mise à jour, guidée par les dépendances fonctionnelles (1FN, 2FN, 3FN, BCNF).
 
 ## O
 
@@ -193,6 +238,9 @@ API moderne permettant de manipuler des fichiers directement dans le navigateur 
 
 **Optimistic UI**
 Pattern d'interface où les changements sont affichés immédiatement avant confirmation serveur, pour une interaction instantanée.
+
+**ORM (Object-Relational Mapper)**
+Bibliothèque qui fait correspondre des objets du langage et des tables relationnelles : génération du SQL, hydratation, gestion des relations, souvent migrations. Prisma, Doctrine, Hibernate, SQLAlchemy.
 
 ## P
 
@@ -216,6 +264,9 @@ A request for data or information from a database.
 **Queue**  
 A data structure that follows the First-In-First-Out (FIFO) principle.
 
+**Query Builder**
+API qui construit du SQL par composition de méthodes (`select().where().orderBy()`) sans mapper vers des objets métier. Knex, Kysely, SQLAlchemy Core.
+
 ## R
 
 **Recursion**  
@@ -226,6 +277,9 @@ The process of restructuring existing code without changing its external behavio
 
 **REST (Representational State Transfer)**  
 An architectural style for designing networked applications.
+
+**Rollback**
+Annulation : d'une transaction en cours (`ROLLBACK`), ou d'une migration déjà appliquée (exécution de son `down`). Un rollback de migration ne restaure pas les données supprimées.
 
 ## S
 
@@ -263,6 +317,12 @@ A reference to a web resource that specifies its location.
 **Unit Test**  
 A test that verifies the behavior of a small, isolated piece of code.
 
+**UML (Unified Modeling Language)**
+Langage de modélisation standardisé par l'OMG. Son diagramme de classes décrit le modèle objet, qu'un ORM fait correspondre au schéma relationnel.
+
+**Unit of Work**
+Objet qui enregistre les créations, modifications et suppressions d'une opération métier et les écrit en une seule fois, dans une transaction, au moment du `flush`/`commit`.
+
 ## V
 
 **Variable**  
@@ -273,6 +333,9 @@ A system that tracks changes to files over time.
 
 **Virtual Machine**  
 A software implementation of a computer that executes programs like a physical machine.
+
+**Verrouillage optimiste**
+Détection des écritures concurrentes par une colonne `version` vérifiée au moment de l'`UPDATE`, plutôt que par un verrou posé à la lecture (verrouillage pessimiste).
 
 ## W
 

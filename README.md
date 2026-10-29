@@ -16,9 +16,10 @@ This repository serves as a comprehensive learning system for programming concep
 carnetdudev/
 ├── 00_introduction/     # Getting started guides
 ├── 01_programming-basics/ # Core programming concepts
-├── 02_algorithms/       # Algorithm implementations & explanations
+├── 02_offline-first/    # Offline-first & local-first (IndexedDB, OPFS, CRDT, P2P)
 ├── 03_theory/          # Software development theory
 ├── 04_back-end/        # Backend development topics
+│   └── orm/            #   ORM, migrations, Merise/UML/ERD (voir 04_back-end/orm/README.md)
 ├── 05_daily-katas/     # Daily practice exercises
 └── meta/               # Project metadata & resources
 ```
